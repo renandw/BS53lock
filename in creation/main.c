@@ -22,14 +22,14 @@ const int password_period = 5;
 // The GPIO pin that is connected to a relay
 const int relay_gpio = 4;
 // The GPIO pin that is connected to a button
-const int password_gpio = 13;
+const int password_gpio = 2;
 
 #define BUTTON_PIN 0
 #ifndef BUTTON_PIN
 #error BUTTON_PIN is not specified
 #endif
 
-#define BUTTON_PIN_2 16
+#define BUTTON_PIN_2 13
 #ifndef BUTTON_PIN_2
 #error BUTTON_PIN is not specified
 #endif
@@ -56,7 +56,7 @@ void lock_unlock();
 
 
 void relay_write(int value) {
-        gpio_write(relay_gpio, value ? 1 : 0);
+        gpio_write(relay_gpio, value ? 0 : 1);
 }
 
 void password_write(bool on) {
